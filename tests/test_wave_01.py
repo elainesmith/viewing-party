@@ -2,7 +2,7 @@ import pytest
 # NOTE: In production code, we developers should change import * to something more specific. Due to some constraints of this project, we will import * in our test files.
 from viewing_party.main import *
 
-
+# @pytest.mark.skip(reason="no way of currently testing this")
 def test_create_movie_all_params_valid_returns_movie():
     # Arrange
     movie_title = "Title A"
@@ -17,7 +17,7 @@ def test_create_movie_all_params_valid_returns_movie():
     assert new_movie["genre"] is "Horror"
     assert new_movie["rating"] is 3.5
 
-@pytest.mark.skip(reason="no way of currently testing this")
+# @pytest.mark.skip(reason="no way of currently testing this")
 def test_create_movie_no_title_returns_none():
     # Arrange
     movie_title = None
@@ -30,7 +30,7 @@ def test_create_movie_no_title_returns_none():
     # Assert
     assert new_movie is None
 
-@pytest.mark.skip(reason="no way of currently testing this")
+# @pytest.mark.skip(reason="no way of currently testing this")
 def test_create_movie_no_genre_returns_none():
     # Arrange
     movie_title = "Title A"
@@ -43,7 +43,7 @@ def test_create_movie_no_genre_returns_none():
     # Assert
     assert new_movie is None
 
-@pytest.mark.skip(reason="no way of currently testing this")
+# @pytest.mark.skip(reason="no way of currently testing this")
 def test_create_movie_no_rating_returns_none():
     # Arrange
     movie_title = "Title A"
