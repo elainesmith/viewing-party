@@ -56,7 +56,7 @@ def test_create_movie_no_rating_returns_none():
     # Assert
     assert new_movie is None
 
-@pytest.mark.skip(reason="no way of currently testing this")
+# @pytest.mark.skip(reason="no way of currently testing this")
 def test_add_to_watched_adds_movie_to_user_watched():
     # Arrange
     movie = {
