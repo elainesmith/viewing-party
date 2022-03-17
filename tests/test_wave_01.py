@@ -2,7 +2,7 @@ import pytest
 # NOTE: In production code, we developers should change import * to something more specific. Due to some constraints of this project, we will import * in our test files.
 from viewing_party.main import *
 
-# This is another test
+
 def test_create_movie_all_params_valid_returns_movie():
     # Arrange
     movie_title = "Title A"
@@ -17,7 +17,7 @@ def test_create_movie_all_params_valid_returns_movie():
     assert new_movie["genre"] is "Horror"
     assert new_movie["rating"] is 3.5
 
-
+@pytest.mark.skip(reason="no way of currently testing this")
 def test_create_movie_no_title_returns_none():
     # Arrange
     movie_title = None
@@ -30,7 +30,7 @@ def test_create_movie_no_title_returns_none():
     # Assert
     assert new_movie is None
 
-
+@pytest.mark.skip(reason="no way of currently testing this")
 def test_create_movie_no_genre_returns_none():
     # Arrange
     movie_title = "Title A"
@@ -43,7 +43,7 @@ def test_create_movie_no_genre_returns_none():
     # Assert
     assert new_movie is None
 
-
+@pytest.mark.skip(reason="no way of currently testing this")
 def test_create_movie_no_rating_returns_none():
     # Arrange
     movie_title = "Title A"
@@ -56,7 +56,7 @@ def test_create_movie_no_rating_returns_none():
     # Assert
     assert new_movie is None
 
-
+@pytest.mark.skip(reason="no way of currently testing this")
 def test_add_to_watched_adds_movie_to_user_watched():
     # Arrange
     movie = {
@@ -77,7 +77,7 @@ def test_add_to_watched_adds_movie_to_user_watched():
     assert updated_data["watched"][0]["genre"] is "Horror"
     assert updated_data["watched"][0]["rating"] is 3.5
 
-
+@pytest.mark.skip(reason="no way of currently testing this")
 def test_add_to_watchlist_adds_movie_to_user_watchlist():
     # Arrange
     movie = {
@@ -98,7 +98,7 @@ def test_add_to_watchlist_adds_movie_to_user_watchlist():
     assert updated_data["watchlist"][0]["genre"] is "Horror"
     assert updated_data["watchlist"][0]["rating"] is 3.5
 
-
+@pytest.mark.skip(reason="no way of currently testing this")
 def test_watch_movie_moves_movie_from_watchlist_to_empty_watched():
     # Arrange
     janes_data = {
@@ -120,7 +120,7 @@ def test_watch_movie_moves_movie_from_watchlist_to_empty_watched():
     assert updated_data["watched"][0]["genre"] is "Fantasy"
     assert updated_data["watched"][0]["rating"] is 4.8
 
-
+@pytest.mark.skip(reason="no way of currently testing this")
 def test_watch_movie_moves_movie_from_watchlist_to_watched():
     # Arrange
     movie_to_watch = {
@@ -154,7 +154,7 @@ def test_watch_movie_moves_movie_from_watchlist_to_watched():
     assert len(updated_data["watched"]) is 2
     assert movie_to_watch in updated_data["watched"]
 
-
+@pytest.mark.skip(reason="no way of currently testing this")
 def test_watch_movie_does_nothing_if_movie_not_in_watchlist():
     # Arrange
     movie_to_watch = {

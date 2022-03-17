@@ -1,7 +1,7 @@
 import pytest
 from viewing_party.main import *
 
-
+@pytest.mark.skip(reason="no way of currently testing this")
 def test_get_new_rec_by_genre_returns_appropriate_recommendations_for_large_amount_of_valid_input():
     # Arrange
     sonyas_data = {
@@ -53,7 +53,7 @@ def test_get_new_rec_by_genre_returns_appropriate_recommendations_for_large_amou
     assert {"title": "Title D", "genre": "Intrigue"} in recommendations
     assert {"title": "Title E", "genre": "Intrigue"} in recommendations
 
-
+@pytest.mark.skip(reason="no way of currently testing this")
 def test_get_new_rec_by_genre_returns_empty_list_when_sonyas_watched_list_is_empty():
     # Arrange
     sonyas_data = {
@@ -88,7 +88,7 @@ def test_get_new_rec_by_genre_returns_empty_list_when_sonyas_watched_list_is_emp
     # Assert
     assert len(recommendations) is 0
 
-
+@pytest.mark.skip(reason="no way of currently testing this")
 def test_get_new_rec_by_genre_returns_empty_list_when_friends_watched_lists_are_empty():
     # Arrange
     sonyas_data = {
@@ -115,7 +115,7 @@ def test_get_new_rec_by_genre_returns_empty_list_when_friends_watched_lists_are_
     assert len(recommendations) is 0
 
 
-
+@pytest.mark.skip(reason="no way of currently testing this")
 def test_get_new_rec_by_genre_returns_empty_list_when_sonya_has_no_favories_and_no_unique_movie_in_watched_list():
     # Arrange
     sonyas_data = {
@@ -150,7 +150,7 @@ def test_get_new_rec_by_genre_returns_empty_list_when_sonya_has_no_favories_and_
     # Assert
     assert len(recommendations) is 0
 
-
+@pytest.mark.skip(reason="no way of currently testing this")
 def test_get_rec_from_favorites_returns_expected_list_from_valid_input():
     # Arrange
     sonyas_data = {
