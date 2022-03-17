@@ -1,4 +1,3 @@
-
 def create_movie(movie_title, genre, rating):
     new_movie = {}
     keys = ["title", "genre", "rating"]
@@ -11,4 +10,7 @@ def create_movie(movie_title, genre, rating):
         return new_movie
 
 
-print(create_movie(None, "horror", 3.5))
+def add_to_watched(user_data, movie):
+    user_data["watched"] == user_data["watched"].append(movie)
+    return user_data
+
