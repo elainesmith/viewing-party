@@ -77,7 +77,7 @@ def test_add_to_watched_adds_movie_to_user_watched():
     assert updated_data["watched"][0]["genre"] is "Horror"
     assert updated_data["watched"][0]["rating"] is 3.5
 
-@pytest.mark.skip(reason="no way of currently testing this")
+# @pytest.mark.skip(reason="no way of currently testing this")
 def test_add_to_watchlist_adds_movie_to_user_watchlist():
     # Arrange
     movie = {
