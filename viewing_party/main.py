@@ -1,3 +1,4 @@
+# WAVE 1 FUNCTIONS
 def create_movie(movie_title, genre, rating):
     new_movie = {}
     keys = ["title", "genre", "rating"]
@@ -28,3 +29,13 @@ def watch_movie(user_data, title):
                 user_data["watched"].append(movie)
     return user_data
 
+# WAVE 2 FUNCTIONS
+
+def get_watched_avg_rating(user_data):
+    ratings = []
+    for dict in user_data["watched"]:
+        ratings.append(dict["rating"])
+    if ratings == []:
+        return 0.0
+    else:
+        return sum(ratings) / len(ratings)

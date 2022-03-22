@@ -1,7 +1,7 @@
 import pytest
 from viewing_party.main import *
 
-@pytest.mark.skip(reason="no way of currently testing this")
+# @pytest.mark.skip(reason="no way of currently testing this")
 def test_get_watched_avg_rating_calculates_watched_average_rating():
     # Arrange
     janes_data = {
@@ -30,7 +30,7 @@ def test_get_watched_avg_rating_calculates_watched_average_rating():
     # Assert
     assert average == pytest.approx(3.56666666664)
 
-@pytest.mark.skip(reason="no way of currently testing this")
+# @pytest.mark.skip(reason="no way of currently testing this")
 def test_get_watched_avg_rating_returns_zero_for_empty_list():
     # Arrange
     janes_data = {
