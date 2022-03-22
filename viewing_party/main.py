@@ -29,8 +29,8 @@ def watch_movie(user_data, title):
                 user_data["watched"].append(movie)
     return user_data
 
-# WAVE 2 FUNCTIONS
 
+# WAVE 2 FUNCTIONS
 def get_watched_avg_rating(user_data):
     ratings = []
     for dict in user_data["watched"]:
@@ -39,3 +39,19 @@ def get_watched_avg_rating(user_data):
         return 0.0
     else:
         return sum(ratings) / len(ratings)
+
+
+def get_most_watched_genre(user_data):
+    genre_map = {}
+    for dict in user_data["watched"]:
+        if dict["genre"] not in genre_map:
+            genre_map[(dict["genre"])] = 1
+        else:
+            genre_map[(dict["genre"])] += 1
+    if genre_map == {}:
+        return None
+    else:
+        return max(genre_map) 
+        # In case of tie, function returns first instance, not ALL. 
+        # Refactor later if time allowed.
+
