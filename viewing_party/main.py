@@ -55,3 +55,31 @@ def get_most_watched_genre(user_data):
         # In case of tie, function returns first instance, not ALL. 
         # Refactor later if time allowed.
 
+
+# WAVE 3 FUNCTIONS
+def get_unique_watched(user_data):
+    # Create list of combined friend's movies
+    friends_movies_list = [] 
+    for watched_dict in user_data["friends"]:
+        for movie in watched_dict["watched"]:
+            if movie not in friends_movies_list:
+                friends_movies_list.append(movie)
+    # Remove movies from user_data if not unique
+    for movie in friends_movies_list:
+        if movie in user_data["watched"]:
+            user_data["watched"].remove(movie)
+    return user_data["watched"]
+
+
+def get_friends_unique_watched(user_data):
+    # Create list of combined friend's movies
+    friends_movies_list = [] 
+    for watched_dict in user_data["friends"]:
+        for movie in watched_dict["watched"]:
+            if movie not in friends_movies_list:
+                friends_movies_list.append(movie)
+    # Remove movies from friends_movies_list if not unique
+    for movie in user_data["watched"]:
+        if movie in friends_movies_list:
+            friends_movies_list.remove(movie)
+    return friends_movies_list
