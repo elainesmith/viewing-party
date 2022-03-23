@@ -1,7 +1,7 @@
 import pytest
 from viewing_party.main import *
 
-@pytest.mark.skip(reason="no way of currently testing this")
+# @pytest.mark.skip(reason="no way of currently testing this")
 def test_get_available_recs_returns_appropriate_recommendations_for_valid_input():
     # Arrange
     amandas_data = {
@@ -47,7 +47,7 @@ def test_get_available_recs_returns_appropriate_recommendations_for_valid_input(
     assert {"title": "Title A", "host": "Service A"} in recommendations
     assert {"title": "Title B", "host": "Service B"} in recommendations
 
-@pytest.mark.skip(reason="no way of currently testing this")
+# @pytest.mark.skip(reason="no way of currently testing this")
 def test_get_available_recs_returns_empty_list_for_valid_input_with_no_intersection_in_subscriptions():
     # Arrange
     amandas_data = {
