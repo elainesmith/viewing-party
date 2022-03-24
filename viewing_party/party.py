@@ -54,9 +54,7 @@ def get_most_watched_genre(user_data):
     if genre_map == {}:
         return None
     else:
-        return max(genre_map) 
-        # In case of tie, function returns first instance, not ALL. 
-        # Refactor later if time allowed.
+        return max(genre_map, key=genre_map.get)
 
 # -----------------------------------------
 # ------------- WAVE 3 --------------------
@@ -70,10 +68,11 @@ def get_unique_watched(user_data):
             if movie not in friends_movies_list:
                 friends_movies_list.append(movie)
     # Remove movies from user_data if not unique
-    for movie in friends_movies_list:
-        if movie in user_data["watched"]:
-            user_data["watched"].remove(movie)
-    return user_data["watched"]
+    unique_watched = []
+    for movie in user_data["watched"]:
+        if movie not in friends_movies_list:
+            unique_watched.append(movie)
+    return unique_watched
 
 
 def get_friends_unique_watched(user_data):
@@ -84,10 +83,11 @@ def get_friends_unique_watched(user_data):
             if movie not in friends_movies_list:
                 friends_movies_list.append(movie)
     # Remove movies from friends_movies_list if not unique
-    for movie in user_data["watched"]:
-        if movie in friends_movies_list:
-            friends_movies_list.remove(movie)
-    return friends_movies_list
+    friends_unique_watched = []
+    for movie in friends_movies_list:
+        if movie not in user_data["watched"]:
+            friends_unique_watched.append(movie)
+    return friends_unique_watched
 
 # -----------------------------------------
 # ------------- WAVE 4 --------------------
